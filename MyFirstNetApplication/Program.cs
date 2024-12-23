@@ -1,7 +1,12 @@
-﻿// Ecrire dans la console
-Console.WriteLine("Hello World !!");
+﻿int v1 = 42;
+int v2 = 0;
 
-// Lire dans la console
-string prenom = Console.ReadLine();
+//int t = v1;
+//v1 = v2;
+//v2 = t;
 
-Console.WriteLine("Bonjour " + prenom + " !!");
+// inverser 2 variables
+(v1, v2) = (v2, v1);
+
+Console.WriteLine("V1:" + v1);
+Console.WriteLine("V2:" + v2);
