@@ -1,7 +1,11 @@
-﻿// Ecrire dans la console
-Console.WriteLine("Hello World !!");
+﻿int nb = 42;
 
-// Lire dans la console
-string prenom = Console.ReadLine();
+// transtypage (cast) implicite
+double nb2 = nb;
 
-Console.WriteLine("Bonjour " + prenom + " !!");
+
+double nb3 = 42.5;
+
+// transtypage (cast) explicite
+int nb4 = (int)nb3;
+Console.WriteLine("test");
