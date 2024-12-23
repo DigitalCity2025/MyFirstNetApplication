@@ -1,45 +1,26 @@
-﻿// simple caractère
-char l = 'K';
-string prenom = "Khun";
-string nom = "Ly";
-double prix = 0.1D * 3; // 0.30000000000004
+﻿
+// Créer une Date
+DateTime date = new DateTime();
+Console.WriteLine(date);
 
-string phrase = "Bonjour\nles\t\"AMIS\"";
-string phrase2 = @"Bonjour
-les     ""AMIS""";
+// Créer une date basée sur la date du jour
+DateTime today = DateTime.Now;
 
-string directory = "c:\\Users\\Desktop";
-string directory2 = @"c:\Users\Desktop";
+// Formater une date
+Console.WriteLine(today.ToString("dd/MM/yyyy"));
+Console.WriteLine($"{today:dd/MM/yyyy}");
 
+// Créer une date précise 
+//DateTime dateDuDebutDeLaFormation = new DateTime(2024,12,9);
+DateTime dateDuDebutDeLaFormation = DateTime.Parse("2024-12-09");
+Console.WriteLine(dateDuDebutDeLaFormation);
 
-Console.WriteLine(phrase);
-Console.WriteLine(phrase2);
-Console.WriteLine(directory);
-Console.WriteLine(directory2);
+Console.WriteLine(dateDuDebutDeLaFormation.Year);
+Console.WriteLine(dateDuDebutDeLaFormation.DayOfWeek);
 
-// concatenation
-Console.WriteLine("Bonjour " + prenom + " " + nom + " !!!");
-// string format
-Console.WriteLine("Bonjour {0} {1} !!!", prenom, nom);
+DateTime maDateDeNaissance = new DateTime(1982, 5, 6);
 
-// string interpolation
-Console.WriteLine($"Bonjour {prenom} {nom} !!!");
+// calculer la différence entre 2 dates
+Console.WriteLine((today - maDateDeNaissance).TotalDays);
 
-
-Console.WriteLine($"Prix : {prix:F2}");
-
-int mois = 1;
-int jour = 5;
-int annee = 2000;
-
-Console.WriteLine($"{jour:D2}/{mois:D2}/{annee}");
-
-string alphabet = "abcdefghijklmnopqrstuvwxyz";
-char lettre = alphabet[4];
-
-Console.WriteLine(lettre);
-
-Console.WriteLine(alphabet[..5]);
-Console.WriteLine(alphabet[23..]);
-Console.WriteLine(alphabet[^3..]);
-Console.WriteLine(alphabet[5..10]);
+Console.ReadKey();
