@@ -1,49 +1,55 @@
-﻿bool flag = false;
-bool flag2 = true;
+﻿// string 
 
-int age = 42;
-bool majeur = age > 18;
+// concatenation
+Console.WriteLine("42" + 42);
 
-Console.WriteLine(majeur);
+// nombre
+// addition + 
+Console.WriteLine(42 + 42); // 84
 
-// > plus grand
-// >= plus grand ou égal
-// < plus petit
-// <= plus petit ou égal
-// == egal
-// != différent
+// soustraction -
+// division /
+// multiplication *
+// modulo %
 
-Console.WriteLine(42 == age);
-Console.WriteLine(42.Equals(age));
+Console.WriteLine(5 % 3); // 2 car  5 = 3 * 1 + (2)
 
-string nom = "   Khun    ".Trim();
-Console.WriteLine(nom.Equals("Khun"));
-Console.WriteLine(nom == "Khun");
+// affectaction
+int a = 42; // 42
+a += 6; // a = a + 6 // 48
+a %= 9; // a = a % 9  // 3
+// a <<= 2; // 12 // 11 => 1100 // 12
+// post incrémentation
+a++; // 4 // a = a + 1
+// préincrémentation
+++a; // 5 // a = a + 1
 
-Console.WriteLine(nom == "kHuN"); // false
-Console.WriteLine(nom.Equals("kHuN", StringComparison.InvariantCultureIgnoreCase)); // true
+Console.WriteLine(++a); // 6
+Console.WriteLine(a); // 6
 
-// OU inclusif, ET, XOR (OU Exclusif)
-bool jeuneAdulte = age > 18 && age < 30;
-Console.WriteLine(jeuneAdulte);
+// opérateur ternaire
+int age = 17;
+string categorie = age >= 18 ? "Adulte" : "Enfant";
+Console.WriteLine(categorie);
 
-Console.WriteLine(age == 42 || nom == "Khun"); // OR
-Console.WriteLine(age == 42 ^ nom == "Khun"); // XOR
+// opérateur switch
+int jour = 1;
+string j = jour switch
+{
+    1 => "Lundi",
+    2 => "Mardi",
+    3 => "Mercredi",
+    _ => "Je ne sais pas"
+};
 
-Console.WriteLine(age == 42 || nom == "Khun");
+Console.WriteLine(j);
 
-// changer ou en et
-Console.WriteLine(!(!(age == 42) && !(nom == "Khun")));
+int? promo = null;
+int prix = 42;
 
-// inverser un booléen
-bool test = true; // true
-bool test2 = !test; // false
+Console.WriteLine(prix - ((promo == null ? 0 : promo) * prix / 100));
 
-// loi de morgan
-// !(cond1 && cond2) <=> !cond1 || !cond2
-// !(cond1 || cond2) <=> !cond1 && !cond2
+// coalesce (ternaire qui donne une valeur par défaut si la variable est nulle)
+Console.WriteLine(prix - ((promo ?? 0) * prix / 100));
 
-
-
-
-
+string entree = Console.ReadLine() ?? string.Empty;
