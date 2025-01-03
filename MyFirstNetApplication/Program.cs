@@ -1,37 +1,69 @@
-﻿using System.Text;
+﻿//Console.WriteLine("Hello");
+//Console.WriteLine("Hello");
+//Console.WriteLine("Hello");
+//Console.WriteLine("Hello");
+//Console.WriteLine("Hello");
+//Console.WriteLine("Hello");
+//Console.WriteLine("Hello");
+//Console.WriteLine("Hello");
+//Console.WriteLine("Hello");
+//Console.WriteLine("Hello");
 
-Console.WriteLine("test");
-int age = 8;
-Console.OutputEncoding = Encoding.UTF8;
-
-if(age >= 18)
+for (int i = 0; i < 10; i++)
 {
-    // instructions
-    Console.WriteLine("🙈🙈🙈🙈");
-}
-else if(age >= 12)
-{
-    Console.WriteLine("🐼🐼🐼🐼🐼🐼");
-}
-else
-{
-    // autre instructions
-    Console.WriteLine("🦄🦄🦄🦄🦄");
+    Console.WriteLine(i);
+    Console.WriteLine("Hello");
 }
 
-string temps = "Sunny";
-switch (temps)
+// multiple itérateurs
+for (int i = 0, j = 25; i < 10 || j > 5; i++, j -= 2)
 {
-    case "Soleil":
-    case "Sunny":
-        // instructions
-        Console.WriteLine("☀️");
-        break;
-    case "Nuage":
-    case "Cloudy":
-        Console.WriteLine("☁️");
-        break;
-    default:
-        Console.WriteLine("🌈");
-        break;
+    Console.WriteLine(i);
+    Console.WriteLine(j);
+    Console.WriteLine("_____________");
 }
+
+// while 
+//bool condition = true;
+
+//while (condition)
+//{
+//    Console.WriteLine("Entrez un nombre");
+//    int nombre = int.Parse(Console.ReadLine());
+//    if(nombre > 5)
+//    {
+//        condition = false;
+//    }
+//}
+
+int nb = 42;
+//while (nb <= 5)
+//{
+//    Console.WriteLine("Entrez un nombre");
+//    nb = int.Parse(Console.ReadLine());
+//}
+
+// do while
+// pour être certain que les instructions soit éxécutées
+// au moins une fois
+do
+{
+    Console.WriteLine("Entrez un nombre");
+    nb = int.Parse(Console.ReadLine());
+} while (nb <= 5);
+
+
+int[] tab = [42, 73, 12, 53, 4, 15, 66, 87];
+foreach (int value in tab)
+{
+    Console.WriteLine(value);
+}
+
+//var enumerator = tab.GetEnumerator();
+//while (enumerator.MoveNext())
+//{
+//    Console.WriteLine(enumerator.Current);
+//}
+//enumerator.Reset();
+
+
