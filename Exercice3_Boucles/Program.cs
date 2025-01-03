@@ -75,12 +75,12 @@
 //    Console.WriteLine(i);
 //}
 
-// si a est une approximation de V2 alors
-// (a² + 2) / 2a sera une meilleure approximation
+// si a est une approximation de racine de b alors
+// (a² + b) / 2a sera une meilleure approximation
 
 //double a = 1;
-//while(Math.Abs((a * a) - 7) > 0.000000000001)
+//while(Math.Abs((a * a) - 2) > 0.000000000001)
 //{
-//    a = (a * a + 7) / (2 * a);
+//    a = (a * a + 2) / (2 * a);
 //    Console.WriteLine(a);
 //}
