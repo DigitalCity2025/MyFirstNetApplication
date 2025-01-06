@@ -1,89 +1,114 @@
-﻿int a = 42;
+﻿using System.Collections;
+using System.Dynamic;
 
-//type de valeur[]
+ArrayList list = new();
+list.Add(42);
+list.Add(39);
 
-// créer un tableau contenant 4 entiers
-// par defaut [0,0,0,0]
-int[] tableau = new int[4];
-Console.WriteLine();
-
-string[] tableauDeString = new string[4];
-// [null, null, null, null]
-
-// initialisation d'un tableau avec plusieures valeurs
-string[] noms = [ "Khun", "Mike", "Thierry" ];
-string[] autresNoms = { "Khun", "Mike", "Thierry" };
-
-Console.WriteLine(noms == autresNoms); // false
-Console.WriteLine(noms.SequenceEqual(autresNoms)); // true
-
-// recupérer un élémént d'un tableau
-Console.WriteLine(noms[2]); // Thierry
-
-// modifier un élément du tableau
-Console.WriteLine(noms[2] = "Simon");
-Console.WriteLine(noms[2]); // Simon
-
-// slice
-string[] nomsDeMesCollegues = autresNoms[^2..]; // ["Mike", "Thierry"]
-
-// longueur d'un tableau
-int l = nomsDeMesCollegues.Length;
-int l2 = nomsDeMesCollegues.Count();
-
-Console.WriteLine(l);
-Console.WriteLine(l2);
-
-// attention à ne pas sortir des indexs d'un tableau
-// string n = noms[42];
-
-// inverser les valeurs du tableau
-noms = noms.Reverse().ToArray();
-
-Console.WriteLine(string.Join(",", noms)); // Simon, Mike, Khun
-
-// copie de l'addresse mémoire du tableau
-string[] t = noms;
-t[0] = "Caroline";
-Console.WriteLine(noms[0]); // Caroline
-
-// copie des valeurs du tableau
-string[] t2 = noms.ToArray();
-//string[] t2 = [..noms];
-t2[0] = "John";
-Console.WriteLine(noms[0]); // Caroline
-
-
-// ["Ringo", "Caroline", "Mike", "Khun", "Steve"]
-string[] t3 = ["Ringo", ..noms, "Steve"];
-
-int[] ints = new int[0];
-if(ints.Length == 0)
+foreach (var item in list)
 {
-    Console.WriteLine("Le tableau est vide");
+    Console.WriteLine(item);
 }
 
-Console.WriteLine();
+Console.WriteLine(list.Count);
 
-// multidimension
+list.Add("Coucou");
 
-// tableau de tableaux
-int[][] tableauDeTableaux = new int[5][];
-tableauDeTableaux[0] = [1, 2, 3];
-tableauDeTableaux[1] = [5, 2, 42];
+foreach (var item in list)
+{
+    Console.WriteLine(item);
+}
 
-// les tailles des tableaux internes peuvent être différentes
-tableauDeTableaux[2] = [5, 2, 44, 33, 66];
+List<double> numbers = new ();
+numbers.Add(42);
+//ints.Add("Hello");
+numbers.Add(4.13);
+numbers.Add(42);
 
-int[,] matrice = new int[4, 6];
-matrice[0, 5] = 42;
+// numbers.Remove(42); // [4.13, 42]
+// numbers.RemoveAt(2);
+// numbers.RemoveAll(n => n == 42);
 
-//int[,,,,] matice2 = new int[4, 5, 3, 2, 6];
+numbers.AddRange([12, 66, 55]); // [4.13, 42, 12, 66, 55]
 
-//object[] objects = [1, "", 555F, true];
+// vider une liste 
+// numbers.Clear();
 
-//object[][] tabtab = new object[5][];
-//tabtab[0] = [1,2,3];
-//tabtab[2] = ["","",""];
+Console.WriteLine("---------");
+foreach (var item in numbers)
+{
+    Console.WriteLine(item);
+}
 
-Console.WriteLine();
+
+Hashtable hashtable = new();
+hashtable.Add("one", "Maison");
+hashtable.Add("two", "Appartement");
+hashtable.Add("toto", "Chateau");
+hashtable.Add(false, true);
+
+Console.WriteLine(hashtable["toto"]);
+Console.WriteLine(hashtable[false]);
+
+Dictionary<string, string> dico = new();
+dico.Add("test", "Khun");
+dico.Add("machin", "Mike");
+
+foreach (var item in dico.Values)
+{
+    Console.WriteLine(item);
+}
+Console.WriteLine("_________");
+foreach (var item in dico.Keys)
+{
+    Console.Write("clé: ");
+    Console.WriteLine(item);
+    Console.Write("valeur: ");
+    Console.WriteLine(dico[item]);
+}
+foreach (var item in dico)
+{
+    Console.Write("clé: ");
+    Console.WriteLine(item.Key);
+    Console.Write("valeur: ");
+    Console.WriteLine(item.Value);
+}
+
+//foreach (var item in hashtable)
+//{
+//    Console.WriteLine(((DictionaryEntry)item).Key);
+//}
+
+Console.WriteLine("test");
+numbers.Select((val, key) => (val, key)).ToList().ForEach(v =>
+{
+    Console.WriteLine(v.key);
+    Console.WriteLine(v.val);
+});
+
+int i = 0;
+
+foreach (var item in numbers)
+{
+    Console.WriteLine(item);
+    Console.WriteLine(i++);
+}
+
+Dictionary<string, int> trad = new();
+trad.Add("One", 1);
+trad.Add("Two", 2);
+
+var trad2 = new { One = 1, Two = 2 };
+
+Console.WriteLine(trad["One"]);
+Console.WriteLine(trad2.One);
+
+dynamic d = new ExpandoObject();
+d.One = 1;
+d.Two = 2;
+d.Three = 3;
+Console.WriteLine(d.One);
+
+
+//long value = long.Parse(Console.ReadLine());
+
