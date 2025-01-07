@@ -1,16 +1,16 @@
 ﻿using ToolBox.Image;
 
-int[,,] images = ImageUtils.GetPixel(@"C:\Users\K\Desktop\Aude\images\plateau fromages 916_00000.jpg");
+int[,,] image = ImageUtils.GetPixel(@"C:\Users\K\Downloads\Valve_original.png");
 // Créer une image en inversant les couleurs (Image en négatif)
 // (100, 100, 100) (155, 155, 155)
-//int[,,] result = new int[images.GetLength(0), images.GetLength(1), images.GetLength(2)];
+//int[,,] result = new int[image.GetLength(0), image.GetLength(1), image.GetLength(2)];
 //for (int i = 0; i < result.GetLength(0); i++)
 //{
 //    for (int j = 0; j < result.GetLength(1); j++)
 //    {
 //        for (int k = 0; k < result.GetLength(2); k++)
 //        {
-//            result[i,j,k] = 255 - images[i,j,k];
+//            result[i,j,k] = 255 - image[i,j,k];
 //        }
 //    }
 //}
@@ -20,13 +20,13 @@ int[,,] images = ImageUtils.GetPixel(@"C:\Users\K\Desktop\Aude\images\plateau fr
 // Créer une image en nuance de gris
 // 0,2126 × Rouge + 0,7152 × Vert + 0,0722 × Bleu.
 
-//int[,,] result = new int[images.GetLength(0), images.GetLength(1), images.GetLength(2)];
+//int[,,] result = new int[image.GetLength(0), image.GetLength(1), image.GetLength(2)];
 
 //for (int i = 0; i < result.GetLength(0); i++)
 //{
 //    for (int j = 0; j < result.GetLength(1); j++)
 //    {
-//        int gris = (int)(images[i, j, 0] * 0.2126 + images[i, j, 1] * 0.7152 + images[i, j, 2] * 0.0722);
+//        int gris = (int)(image[i, j, 0] * 0.2126 + image[i, j, 1] * 0.7152 + image[i, j, 2] * 0.0722);
 
 //        for (int k = 0; k < result.GetLength(2); k++)
 //        {
@@ -38,7 +38,7 @@ int[,,] images = ImageUtils.GetPixel(@"C:\Users\K\Desktop\Aude\images\plateau fr
 
 
 // Créer une bordure noire de 10 pixels de large
-//int[,,] result = new int[images.GetLength(0), images.GetLength(1), images.GetLength(2)];
+//int[,,] result = new int[image.GetLength(0), image.GetLength(1), image.GetLength(2)];
 
 //for (int i = 10; i < result.GetLength(0) - 10; i++)
 //{
@@ -46,51 +46,85 @@ int[,,] images = ImageUtils.GetPixel(@"C:\Users\K\Desktop\Aude\images\plateau fr
 //    {
 //        for (int k = 0; k < result.GetLength(2); k++) 
 //        {
-//            result[i, j, k] = images[i, j, k];
+//            result[i, j, k] = image[i, j, k];
 //        }
 //    }
 //}
 //int borderWidth = 10;
-//for (int i = 0; i < images.GetLength(0); i++)
+//for (int i = 0; i < image.GetLength(0); i++)
 //{
-//    for (int j = 0; j < borderWidth && j < images.GetLength(1); j++)
+//    for (int j = 0; j < borderWidth && j < image.GetLength(1); j++)
 //    {
-//        for (int k = 0; k < images.GetLength(2); k++)
+//        for (int k = 0; k < image.GetLength(2); k++)
 //        {
-//            images[i, j, k] = 0;
-//            images[i, images.GetLength(1) - 1 - j, k] = 0;
+//            image[i, j, k] = 0;
+//            image[i, image.GetLength(1) - 1 - j, k] = 0;
 //        }
 //    }
 //}
 
-//for (int i = 0; i < borderWidth && i < images.GetLength(0); i++)
+//for (int i = 0; i < borderWidth && i < image.GetLength(0); i++)
 //{
-//    for (int j = 0; j < images.GetLength(1); j++)
+//    for (int j = 0; j < image.GetLength(1); j++)
 //    {
-//        for (int k = 0; k < images.GetLength(2); k++)
+//        for (int k = 0; k < image.GetLength(2); k++)
 //        {
-//            images[i, j, k] = 0;
-//            images[images.GetLength(0) - 1 - i, j, k] = 0;
+//            image[i, j, k] = 0;
+//            image[image.GetLength(0) - 1 - i, j, k] = 0;
 //        }
 //    }
 //}
 
-//ImageUtils.CreateImage(@"C:\Users\K\Desktop\bordure.png", images);
+//ImageUtils.CreateImage(@"C:\Users\K\Desktop\bordure.png", image);
 
 // Faire pivoter l'image de 90deg vers la droite
-int[,,] result = new int[images.GetLength(1), images.GetLength(0), images.GetLength(2)];
+//int[,,] result = new int[image.GetLength(1), image.GetLength(0), image.GetLength(2)];
 
-for (int i = 0; i < images.GetLength(0); i++)
+//for (int i = 0; i < image.GetLength(0); i++)
+//{
+//    for (int j = 0; j < image.GetLength(1); j++)
+//    {
+//        for (int k = 0; k < image.GetLength(2); k++)
+//        {
+//            result[j, i, k] = image[i, image.GetLength(1) - 1 - j, k];
+//        }
+//    }
+//}
+
+//ImageUtils.CreateImage(@"C:\Users\K\Desktop\test.png", result);
+
+// Bonus: Algorithme Sobel
+int[,] mx = { { -1, 0, 1 }, { -2, 0, 2 }, { -1, 0, 1 } };
+int[,] my = { { -1, 2, -1 }, { 0, 0, 0 }, { 1, 2, 1 } };
+int[,,] result = new int[image.GetLength(0), image.GetLength(1), image.GetLength(2)];
+
+for (int i = 0; i < image.GetLength(0); i++)
 {
-    for (int j = 0; j < images.GetLength(1); j++)
+    for (int j = 0; j < image.GetLength(1); j++)
     {
-        for (int k = 0; k < images.GetLength(2); k++)
+        int gx = 0;
+        int gy = 0;
+        for (int x = -1; x <= 1; x++)
         {
-            result[j, i, k] = images[i, images.GetLength(1) - 1 - j, k];
+            for (int y = -1; y <= 1; y++) 
+            {
+                int dx = i + x;
+                int dy = j + y;
+
+                if(dx < 0 || dy < 0 || dx >= image.GetLength(0) || dy >= image.GetLength(1))
+                {
+                    continue;
+                }
+                int grey = (int)(image[dx, dy, 0] * 0.2126 + image[dx, dy, 1] * 0.7152 + image[dx, dy, 2] * 0.0722);
+                gx += mx[y + 1, x + 1] * grey;
+                gy += my[y + 1, x + 1] * grey;
+            }
         }
+        for (int k = 0; k < image.GetLength(2); k++)
+        {
+            result[i, j, k] = (int)Math.Sqrt(Math.Pow(gx, 2) + Math.Pow(gy, 2));
+        } 
     }
 }
 
 ImageUtils.CreateImage(@"C:\Users\K\Desktop\test.png", result);
-
-// Bonus: Algorithme Sobel
