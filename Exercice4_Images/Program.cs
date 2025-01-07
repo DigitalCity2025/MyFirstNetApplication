@@ -1,6 +1,6 @@
 ﻿using ToolBox.Image;
 
-int[,,] image = ImageUtils.GetPixel(@"C:\Users\K\Desktop\Aude\images\sun.jpg");
+int[,,] image = ImageUtils.GetPixel(@"C:\Users\K\Desktop\Aude\Images\sun.jpg");
 // Créer une image en inversant les couleurs (Image en négatif)
 // (100, 100, 100) (155, 155, 155)
 //int[,,] result = new int[image.GetLength(0), image.GetLength(1), image.GetLength(2)];
@@ -113,16 +113,23 @@ for (int i = 0; i < image.GetLength(0); i++)
 
                 if(dx < 0 || dy < 0 || dx >= image.GetLength(0) || dy >= image.GetLength(1))
                 {
-                    break;
+                    continue;
                 }
+
                 int grey = (int)(image[dx, dy, 0] * 0.2126 + image[dx, dy, 1] * 0.7152 + image[dx, dy, 2] * 0.0722);
+
                 gx += mx[y + 1, x + 1] * grey;
                 gy += my[y + 1, x + 1] * grey;
             }
         }
+        int value = (int)Math.Sqrt(Math.Pow(gx, 2) + Math.Pow(gy, 2));
+        if(value > 255)
+        {
+            value = 255;
+        }
         for (int k = 0; k < image.GetLength(2); k++)
         {
-            result[i, j, k] = (int)Math.Sqrt(Math.Pow(gx, 2) + Math.Pow(gy, 2));
+            result[i, j, k] = value;
         } 
     }
 }
