@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice3_Boucles", "Exerci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice4_Images", "Exercice4_Images\Exercice4_Images.csproj", "{6C88DC15-5841-4E19-B335-044653383C91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exo5_Collections", "Exo5_Collections\Exo5_Collections.csproj", "{C688023E-6F98-4361-81FB-365499BA793F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6C88DC15-5841-4E19-B335-044653383C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C88DC15-5841-4E19-B335-044653383C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C88DC15-5841-4E19-B335-044653383C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C688023E-6F98-4361-81FB-365499BA793F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C688023E-6F98-4361-81FB-365499BA793F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C688023E-6F98-4361-81FB-365499BA793F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C688023E-6F98-4361-81FB-365499BA793F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
