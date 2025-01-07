@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice3_Boucles", "Exerci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice4_Images", "Exercice4_Images\Exercice4_Images.csproj", "{6C88DC15-5841-4E19-B335-044653383C91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exo5_Collections", "Exo5_Collections\Exo5_Collections.csproj", "{C688023E-6F98-4361-81FB-365499BA793F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercices5_Collections", "Exo5_Collections\Exercices5_Collections.csproj", "{C688023E-6F98-4361-81FB-365499BA793F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice6_Structures", "Exercice6_Structures\Exercice6_Structures.csproj", "{11256C79-EADD-4D0A-B3FD-C11223B056C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{C688023E-6F98-4361-81FB-365499BA793F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C688023E-6F98-4361-81FB-365499BA793F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C688023E-6F98-4361-81FB-365499BA793F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11256C79-EADD-4D0A-B3FD-C11223B056C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11256C79-EADD-4D0A-B3FD-C11223B056C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11256C79-EADD-4D0A-B3FD-C11223B056C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11256C79-EADD-4D0A-B3FD-C11223B056C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
