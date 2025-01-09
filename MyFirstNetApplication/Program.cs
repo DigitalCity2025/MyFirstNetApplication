@@ -1,8 +1,5 @@
 ﻿Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-Console.WriteLine("🌈");
-
-
 Person p;
 
 // appels de la fonction Parler
@@ -99,14 +96,15 @@ Console.WriteLine(Somme(42,7,8,9,11,33,99));
 // retourner plusieurs valeurs
 (int, bool, string , char) Test55555()
 {
-    return (42, true, "Khun", '\n');
+    return (42, true, "Khun🍔🦄", '\n');
 }
 
 (int nb, bool flag, string s, char c) = Test55555();
 (int, bool, string, char) tuple = Test55555();
 Console.WriteLine(tuple.Item1); 
-Console.WriteLine(nb);
+Console.WriteLine(s);
 
+Console.ReadKey();
 
 
 struct Person
