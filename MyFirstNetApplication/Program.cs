@@ -18,17 +18,26 @@ if(r.HasFlag(Role.Directeur) && r.HasFlag(Role.Vendeur))
     Console.WriteLine("Bienvenue monsieur le directeur");
 }
 
-// transformer un enum en tableau
+// transformer un enum en tableau d'enum
 TypeDeCarburant[] types = Enum.GetValues<TypeDeCarburant>();
+// [Diesel, Essence, Gaz, Electricite]
+
+
+// transformer un enum en tableau de string
+string[] types2 = Enum.GetNames<TypeDeCarburant>();
+// [Diesel, Essence, Gaz, Electricite]
 
 // transformer un string en enum
-TypeDeCarburant type1 = Enum.Parse<TypeDeCarburant>("Diesel");
+TypeDeCarburant type1 = Enum.Parse<TypeDeCarburant>("Diesel"); // Diesel
+
+// transformer un enum en string
+string s = TypeDeCarburant.Essence.ToString();
 
 // transformer un int en enum
-TypeDeCarburant type2 = (TypeDeCarburant)3;
+TypeDeCarburant type2 = (TypeDeCarburant)43; //Essence 
 
 // transformer un enum en int
-int value = (int)TypeDeCarburant.Electricite;
+int value = (int)TypeDeCarburant.Electricite; // 45
 
 enum TypeDeCarburant
 {
